@@ -197,6 +197,84 @@ a {
   margin-top: 18px;
 }
 
+/* ================= MOBILE ZOOM IMAGE ================= */
+.image-zoom {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-zoom img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 14px;
+}
+
+/* ================= CITY PAGE ================= */
+.city-page {
+  padding: 24px 16px;
+  max-width: 420px;
+  margin: auto;
+}
+
+.city-header {
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: white;
+  padding: 22px;
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.city-header h1 {
+  font-size: 1.4rem;
+}
+
+.city-header p {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* ================= TICKET CARD ================= */
+.ticket {
+  margin-top: 24px;
+}
+
+.ticket-desc {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.ticket-desc li {
+  margin-bottom: 6px;
+}
+
+/* ================= COUNTER ================= */
+.stock {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-home {
+  display: block;
+  margin: 40px auto 10px;
+  padding: 14px;
+  text-align: center;
+  border: 2px solid #6366f1;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #6366f1;
+  max-width: 260px;
+}
+
 .social-icons img {
   width: 36px;
 }
@@ -234,15 +312,30 @@ a {
   inset: 0;
   background: rgba(0,0,0,0.85);
   display: none;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 9999;
+  pointer-events: none;
+}
+
+.image-zoom.active {
+  display: flex;
+  pointer-events: auto;
 }
 
 .image-zoom img {
-  max-width: 90%;
+  max-width: 95%;
   max-height: 90%;
-  border-radius: 14px;
+  border-radius: 16px;
 }
-
+.like-btn {
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.scroll-gallery img {
+  cursor: zoom-in;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+}
 }
