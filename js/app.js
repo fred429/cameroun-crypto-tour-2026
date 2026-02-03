@@ -19,18 +19,16 @@ document.querySelectorAll(".like-btn").forEach(btn => {
     setTimeout(() => btn.classList.remove("liked"), 300);
   });
 });
-const zoomBox = document.createElement("div");
-zoomBox.className = "image-zoom";
-zoomBox.innerHTML = "<img>";
-document.body.appendChild(zoomBox);
+const zoomBox = document.getElementById("imageZoom");
+const zoomImg = zoomBox.querySelector("img");
 
 document.querySelectorAll(".scroll-gallery img, .hero-affiche").forEach(img => {
   img.addEventListener("click", () => {
-    zoomBox.classList.add("active");
-    zoomBox.querySelector("img").src = img.src;
+    zoomImg.src = img.src;
+    zoomBox.style.display = "flex";
   });
 });
 
 zoomBox.addEventListener("click", () => {
-  zoomBox.classList.remove("active");
+  zoomBox.style.display = "none";
 });
